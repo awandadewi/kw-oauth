@@ -39,6 +39,18 @@ class Developers::AppsController < Developers::BaseController
     redirect_to developers_apps_path
   end
 
+  def generate_own_token
+    application = Application.find(params[:id])
+    application.generate_own_token
+    redirect_to developers_app_path(application)
+  end
+
+  def revoke_token
+    application = Application.find(params[:id])
+    Doorkeeper::AccessToken.find(params[:token_id]).revoke
+    redirect_to developers_app_path(application)
+  end
+
   private
 
     def set_application

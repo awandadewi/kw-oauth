@@ -30,6 +30,25 @@
           </div>
         </div>
       </div>
+      <div class="col-md-12 col-lg-6">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title c-typo--lg u-mbi--5">Standard Usage</h4>
+            <p class="card-text c-typo--sm">Only access your account's resources.</p>
+            <h4 class="c-typo--lg u-mt--20 u-mbi--5">Your token</h4>
+            <p class="c-typo--sm">You can use any of tokens below to access API.</p>
+            <% @application.own_active_tokens.each do |token| %>
+            <div class="form-group">
+              <div class="input-group">
+                <%= text_field_tag :token, token.token, class: "form-control", readonly: true %>
+                <%= link_to "Revoke", revoke_token_developers_app_path(@application, token_id: token.id), method: :delete, class: "btn btn-outline-danger" %>
+              </div>
+            </div>
+            <% end %>
+            <%= link_to "Generate new token", generate_own_token_developers_app_path(@application), method: :post, class: "btn btn-success" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
