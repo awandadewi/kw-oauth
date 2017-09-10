@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910103019) do
+ActiveRecord::Schema.define(version: 20170910143910) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "ref_id"
+    t.text     "pic"
+    t.text     "meta"
+    t.boolean  "approved",         default: false, null: false
+    t.string   "application_type"
+    t.integer  "application_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.index ["application_type", "application_id"], name: "index_companies_on_application_type_and_application_id"
+  end
+
+  create_table "loans", force: :cascade do |t|
+    t.float    "amount"
+    t.text     "detail"
+    t.string   "user_email"
+    t.string   "application_type"
+    t.integer  "application_id"
+    t.integer  "company_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["application_type", "application_id"], name: "index_loans_on_application_type_and_application_id"
+    t.index ["company_id"], name: "index_loans_on_company_id"
+  end
 
   create_table "oauth_access_grants", force: :cascade do |t|
     t.integer  "resource_owner_id", null: false
