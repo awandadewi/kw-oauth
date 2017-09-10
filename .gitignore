@@ -16,6 +16,23 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.DS_Store
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore pow environment settings
+.powenv
+
+# Ignore Coverage
+/coverage/
+dump.rdb
+
+# Ignore dotenv
+.env
+.env*
+
+# if using bower-rails ignore default bower_components path bower.json files
+/vendor/assets/bower_components
+
+/public/assets/*

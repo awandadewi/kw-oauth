@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Front-end
+gem "bower-rails", "~> 0.11.0"
+
 # Core
 gem 'devise'
 gem 'annotate'
