@@ -41,6 +41,7 @@ gem "bower-rails", "~> 0.11.0"
 # Core
 gem 'devise'
 gem 'annotate'
+gem 'doorkeeper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
