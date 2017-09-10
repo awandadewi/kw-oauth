@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Applications</h1>
+  <%= link_to "New application", new_developers_app_path, class: 'btn btn-primary' %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="main-xs">Application</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @applications.each do |application| %>
+        <tr>
+          <td>
+            <%= link_to application.name, developers_app_path(application) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

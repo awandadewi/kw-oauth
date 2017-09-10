@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Edit Application</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <%= form_for @application, url: developers_app_path(@application), method: :patch, html: { role: 'form' } do |f| %>
+      <%= render 'form', f: f, application: @application %>
+      <% end %>
+    </div>
+  </div>
+</div>

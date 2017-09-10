@@ -1,0 +1,35 @@
+<div class="l-dev">
+  <div class="container">
+    <div class="page-header iblock">
+      <h1 class="c-typo--xl"><%= @application.name %></h1>
+    </div>
+    <div class="pull-right">
+      <%= link_to t('doorkeeper.applications.buttons.edit'), edit_developers_app_path(@application), class: 'btn btn-primary' %>
+      <%= link_to t('doorkeeper.applications.buttons.destroy'), developers_app_path(@application), method: :delete, onclick: "return confirm('#{ t('doorkeeper.applications.confirmations.destroy') }')", class: "btn btn-outline-danger" %>
+    </div>
+    <hr>
+    <h1 class="c-typo--xl u-mt--40">How to use</h1>
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title c-typo--lg u-mbi--5">OAuth2 Usage</h4>
+            <p class="card-text c-typo--sm">Can access other account's resources with OAuth2 strategy.</p>
+            <div class="form-group">
+              <label>Application ID:</label>
+              <div class="input-group">
+                <%= text_field_tag "application_id", @application.uid, class: "form-control", readonly: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Application Secret:</label>
+              <div class="input-group">
+                <%= text_field_tag "secret", @application.secret, class: "form-control", readonly: true %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

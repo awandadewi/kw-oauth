@@ -1,0 +1,12 @@
+<div class="l-dev">
+  <div class="container">
+    <h3 class="u-typo--lg u-mb--40">New Application</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <%= form_for @application, url: developers_apps_path, method: :post, html: { role: 'form' } do |f| %>
+        <%= render 'form', f: f, application: @application %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

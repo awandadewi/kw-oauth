@@ -10,4 +10,15 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  # Developers
+  namespace :developers do
+    get "/", to: 'apps#index'
+    resources :apps do
+      member do
+        post :generate_own_token
+        delete :revoke_token
+      end
+    end
+  end
+
 end
