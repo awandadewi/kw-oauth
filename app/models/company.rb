@@ -17,4 +17,8 @@
 class Company < ApplicationRecord
 
   belongs_to :application, polymorphic: true
+
+  validates :name, presence: true
+  validates :ref_id, presence: true
+  validates :pic, presence: true
 end

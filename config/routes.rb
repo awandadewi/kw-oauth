@@ -21,4 +21,16 @@ Rails.application.routes.draw do
     end
   end
 
+  # API
+  namespace :api, :defaults => {:format => :json} do
+    namespace :v1 do
+      resources :companies do
+        collection do
+          post :register
+        end
+      end
+      resources :loans
+    end
+  end
+
 end
