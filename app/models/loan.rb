@@ -17,4 +17,8 @@ class Loan < ApplicationRecord
 
   belongs_to :company
   belongs_to :application, polymorphic: true
+
+  validates :amount, presence: true
+  validates :user_email, presence: true
+  validates :company, presence: true
 end

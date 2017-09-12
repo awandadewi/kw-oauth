@@ -29,7 +29,11 @@ Rails.application.routes.draw do
           post :register
         end
       end
-      resources :loans
+      resources :loans do
+        collection do
+          post :apply
+        end
+      end
     end
   end
 
